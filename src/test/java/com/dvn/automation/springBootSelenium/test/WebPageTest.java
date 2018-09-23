@@ -1,14 +1,11 @@
 package com.dvn.automation.springBootSelenium.test;
 
 import com.dvn.automation.springBootSelenium.base.AbstractTest;
-import com.dvn.automation.springBootSelenium.base.DriverFactory;
 import com.dvn.automation.springBootSelenium.page.GoogleSearch;
 import com.dvn.automation.springBootSelenium.page.Yahoo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-import static com.dvn.automation.springBootSelenium.base.AbstractPage.waitFor;
 
 
 public class WebPageTest  extends AbstractTest{
@@ -28,12 +25,27 @@ public class WebPageTest  extends AbstractTest{
 
     @Test
     public void verifyYahooHomePage(){
+
         yahoo.launchYahoo();
         yahoo.enterSearchTermAs("India");
         yahoo.submit();
-        waitFor(5000);
     }
 
+    @Test
+    public void verifyGoogleHomePageUS(){
+
+        googleSearch.launchGoogleSearch();
+        googleSearch.enterSearchTermAs("US");
+        googleSearch.submit();
+    }
+
+    @Test
+    public void verifyYahooHomePageUS(){
+
+        yahoo.launchYahoo();
+        yahoo.enterSearchTermAs("US");
+        yahoo.submit();
+    }
 
 
 }

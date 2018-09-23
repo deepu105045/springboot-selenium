@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 public class AbstractPage {
 
 
+
+
     public void navigate(final String url){
         DriverFactory.getInstance().getDriver().navigate().to(url);
     }
@@ -17,11 +19,5 @@ public class AbstractPage {
         DriverFactory.getInstance().getDriver().findElement(locator).click();
     }
 
-    public static void waitFor(int timeout){
-        try {
-            Thread.sleep(timeout);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+
 }
