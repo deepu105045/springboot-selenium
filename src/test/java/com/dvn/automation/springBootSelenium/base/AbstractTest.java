@@ -10,7 +10,7 @@ public class AbstractTest  extends AbstractTestNGSpringContextTests{
 
     @AfterMethod
     public void close(){
-        System.out.println("Closing driver ");
+        System.out.println("After test  " +  ". Thread id is: " + Thread.currentThread().getId());
         DriverFactory.getInstance().removeDriver();
     }
 }
