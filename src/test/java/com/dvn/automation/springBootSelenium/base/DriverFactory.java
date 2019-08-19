@@ -1,21 +1,21 @@
 package com.dvn.automation.springBootSelenium.base;
 
-import com.dvn.automation.springBootSelenium.properties.Prop;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import static java.lang.ThreadLocal.withInitial;
 
 @Component
 public class DriverFactory {
+
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    DriverType selectedType = DriverType.CHROME;
+    DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 
     private DriverFactory(){}
 
@@ -25,10 +25,7 @@ public class DriverFactory {
         return instance;
     }
 
-    ThreadLocal<WebDriver> driver = withInitial(() -> {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver");
-        return new ChromeDriver();
-    });
+    ThreadLocal<WebDriver> driver = withInitial(() -> selectedType.getWebDriverObject(desiredCapabilities));
 
     public WebDriver getDriver(){
         return driver.get();

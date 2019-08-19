@@ -8,27 +8,28 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Yahoo extends AbstractPage{
-    Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private By searchBoxLocator = By.id("uh-search-box");
     private By searchButton = By.id("uh-search-button");
+    String yahooURL="https://in.yahoo.com/";
 
     public void launchYahoo(){
-        navigate("https://in.yahoo.com/");
-        logger.info("Launch yahoo search page " + Thread.currentThread().getId());
+        navigate(yahooURL);
+        logger.info("Launch yahoo search page : " + yahooURL);
 
     }
 
     public void enterSearchTermAs(String text) {
         enterText(searchBoxLocator,text);
-        logger.info("Yahoo enter search term " + Thread.currentThread().getId());
+        logger.info("Yahoo enter search term : " + text);
 
     }
 
     public void submit(){
         click(searchButton);
-        logger.info("Yahoo submit " + Thread.currentThread().getId());
+        logger.info("Submit");
 
     }
 }
