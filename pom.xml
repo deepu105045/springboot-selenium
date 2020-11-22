@@ -36,6 +36,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>4.2.2</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -60,6 +66,35 @@
             <artifactId>guava</artifactId>
             <version>19.0</version>
         </dependency>
+
+
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>6.8.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>6.8.0</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-spring</artifactId>
+			<version>6.8.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>cucumber-reporting</artifactId>
+			<version>4.2.3</version>
+		</dependency>
 
 	</dependencies>
 

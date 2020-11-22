@@ -2,6 +2,7 @@ package com.dvn.automation.springBootSelenium.test;
 
 import com.dvn.automation.springBootSelenium.base.AbstractTest;
 import com.dvn.automation.springBootSelenium.page.GoogleSearch;
+import com.dvn.automation.springBootSelenium.page.Pages;
 import com.dvn.automation.springBootSelenium.page.Yahoo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +26,6 @@ public class WebPageTest  extends AbstractTest{
     @Test
     public void verifyGoogleHomePage(){
         logger.info("Starting Google home page test");
-
         googleSearch.launchGoogleSearch();
         googleSearch.enterSearchTermAs("India");
         googleSearch.submit();
@@ -55,10 +55,9 @@ public class WebPageTest  extends AbstractTest{
 
     @Test
     public void verifyYahooHomePageUS(){
-
-        yahoo.launchYahoo();
-        yahoo.enterSearchTermAs("USA");
-        yahoo.submit();
+        Pages.Yahoo.launchYahoo();
+        Pages.Yahoo.enterSearchTermAs("USA");
+        Pages.Yahoo.submit();
 
 
     }
